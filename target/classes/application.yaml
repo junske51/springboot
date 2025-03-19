@@ -1,0 +1,13 @@
+spring:
+  mvc:
+#    static-path-pattern:  /kele/**
+    hiddenmethod:
+      filter:
+        enabled: true
+    view:    #配置视图解析器
+      suffix: .html
+      prefix: /
+      #如果上述是static-path-pattern:  /kele/** ，那么prefix: /改为： prefix: /kele/
+  web:
+    resources:
+      static-locations: ["classpath:/kele/","classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/"]
