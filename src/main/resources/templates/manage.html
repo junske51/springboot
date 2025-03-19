@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理后台</title>
+</head>
+<body bgcolor="#CED3FE">
+<img src="images/login.jpg"/>
+<a href='#'>返回管理界面</a> <a href='#' th:href="@{/}">安全退出</a> 欢迎您::[[${session.loginAdmin.name}]]
+<hr/>
+<div style="text-align: center">
+    <h1>管理雇员~</h1>
+    <table border="1px" cellspacing="0" bordercolor="green" style="width:800px;margin:
+auto">
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>age</td>
+            <td>email</td>
+            <td>password</td>
+        </tr>
+        <tr bgcolor="pink" th:each="user: ${users}">
+            <!-- [[${user.id}]] 就是 th 的行内写法 -->
+            <td>[[${user.id}]]</td>
+            <td th:text="${user.name}"></td>
+            <td>[[${user.age}]]</td>
+            <td>[[${user.email}]]</td>
+            <td>[[${user.password}]]</td>
+        </tr>
+    </table>
+    <br/>
+</div>
+<hr/>
+<img src="images/1.jpg"/>
+</body>
+</html>
